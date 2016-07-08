@@ -1,0 +1,10 @@
+DESCRIBE ?uri
+where {
+    {
+        ?uri a vcard:Individual
+    }UNION{
+        ?uri a ufVivo:TRCatalogLink .
+    }
+    FILTER(STRSTARTS(STR(?uri), "http://vivo.school.edu/"))
+}
+LIMIT 10
